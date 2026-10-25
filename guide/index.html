@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>دليل ورشة كلود · ايش رح تتعلم</title>
+<meta name="description" content="ايش رح تتعلم بالجلسات التلاتة بورشة كلود، وايش بتطلع فيه من كل جلسة.">
+<meta property="og:title" content="دليل ورشة كلود: ايش رح تتعلم بالجلسات التلاتة">
+<meta property="og:description" content="3 جلسات لايف أونلاين، وكل جلسة إلها نتيجة بتطلع فيها.">
+<meta property="og:image" content="https://ai.anoonsolutions.com/assets/banner.jpg">
+<meta name="theme-color" content="#120c09">
+<style>
+@font-face{font-family:TS;src:url(../assets/ts-regular.woff2) format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:TS;src:url(../assets/ts-bold.woff2) format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:TD;src:url(../assets/td-bold.woff2) format('woff2');font-weight:700;font-display:swap}
+:root{--bg:#120c09;--bg2:#1d130e;--card:#fbf6f1;--line:#efe2d8;--ink:#2a1d16;--muted:#6f5a4e;--acc:#e0703a;--acc2:#f0a36e}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:TS,Tahoma,Arial,sans-serif;color:var(--ink);line-height:1.75;-webkit-font-smoothing:antialiased}
+h1,h2{font-family:TD,TS,serif;font-weight:700;line-height:1.3}
+.num{flex:0 0 42px;height:42px;border-radius:50%;background:var(--bg2);color:var(--acc2);display:grid;place-items:center;font:700 18px TS}
+.sh{display:flex;gap:12px;align-items:center}
+.kick{font:700 12.5px TS;color:var(--acc);letter-spacing:.2px}
+.sess h2{font-size:22px;color:var(--ink)}
+.intro{color:var(--muted);font-size:15px;margin:8px 0 6px}
+.list{list-style:none;display:grid;gap:7px;margin:8px 0}
+.list li{display:flex;gap:10px;align-items:flex-start;font-size:15px}
+.list svg{flex:0 0 18px;width:18px;height:18px;margin-top:5px;stroke:var(--acc);stroke-width:3;fill:none}
+.out{background:#fdf0e6;border-inline-start:4px solid var(--acc);border-radius:12px;padding:10px 14px;font-size:15px;margin-top:10px}
+.out b{color:var(--acc)}
+.guest{background:linear-gradient(160deg,#2a1b14,#1a110c)!important;color:#f6e9df}
+.guest h2{color:#fff6ef}.guest .intro{color:#e9d7ca}.guest .kick{color:var(--acc2)}
+.guest .num{background:var(--acc);color:#fff}
+.opts{display:grid;gap:12px}
+.opt{border:2px solid var(--line);border-radius:18px;padding:18px;background:#fff}
+.opt.dark{background:linear-gradient(160deg,#2a1b14,#1a110c);border-color:#3a271d;color:#f6e9df}
+.opt.dark .list svg{stroke:var(--acc2)}
+.oh{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.on{font:700 19px TS}
+.badge{font:700 11.5px TS;color:var(--bg2);background:var(--acc2);border-radius:999px;padding:4px 10px}
+.price{font:700 30px TS;margin:4px 0 6px;direction:ltr;text-align:right}
+.price s{font-size:.55em;font-weight:400;opacity:.5;margin-right:10px}
+.note2{font-size:14px;color:var(--muted);margin-top:6px}
+
+body{background:radial-gradient(900px 600px at 85% -10%,rgba(224,112,58,.28),transparent 60%),radial-gradient(700px 500px at -10% 110%,rgba(224,112,58,.18),transparent 60%),var(--bg);background-attachment:fixed}
+.wrap{max-width:560px;margin:0 auto;padding:18px 16px 40px}
+.top{display:flex;align-items:center;justify-content:space-between;color:#f3e3d7;padding:4px 4px 14px}
+.brand{font:700 15px TS;color:#f3e3d7;text-decoration:none}.brand span{color:var(--acc2)}
+.top a.bk{font-size:13px;color:var(--acc2);text-decoration:none}
+.card{background:var(--card);border-radius:22px;overflow:hidden;box-shadow:0 30px 60px -20px rgba(0,0,0,.55);margin-bottom:14px}
+.hero img{display:block;width:100%;height:auto}
+.pad{padding:22px 20px}
+h1{font-size:28px;color:var(--ink)}
+.lead{color:var(--muted);font-size:15.5px;margin-top:8px}
+.sec-t{font:700 19px TD,TS;color:var(--ink);margin-bottom:8px}
+.sess{background:var(--card);border-radius:22px;padding:20px;margin-bottom:14px;box-shadow:0 30px 60px -20px rgba(0,0,0,.55)}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;font:700 17px TS;border-radius:16px;padding:15px 18px;text-decoration:none;margin-top:10px}
+.btn-pri{background:linear-gradient(180deg,#e9824d,var(--acc));color:#fff;box-shadow:0 12px 24px -10px rgba(224,112,58,.7)}
+.btn-sec{background:#f3e7de;color:var(--ink)}
+details{border:1px solid var(--line);border-radius:14px;margin-top:10px;background:#fff}
+summary{list-style:none;cursor:pointer;padding:13px 15px;font-weight:700;display:flex;justify-content:space-between;align-items:center;gap:10px}
+summary::-webkit-details-marker{display:none}
+summary .arr{transition:transform .25s;color:var(--acc)}
+details[open] summary .arr{transform:rotate(180deg)}
+details p{padding:0 15px 13px;color:var(--muted);font-size:15px}
+.foot{color:#9c8475;font-size:12.5px;text-align:center;margin-top:18px}
+.foot a{color:var(--acc2);text-decoration:none}
+@media (min-width:600px){.wrap{padding-top:34px}h1{font-size:32px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><a class="brand" href="../">ورشة <span>احتراف كلود</span></a><a class="bk" href="../">احجز مقعدك ←</a></div>
+  <div class="card hero"><img src="../assets/banner.jpg" alt="ورشة احتراف كلود من أنثروبيك">
+    <div class="pad">
+      <h1>ايش رح تتعلم بالجلسات التلاتة؟</h1>
+      <p class="lead">3 جلسات لايف أونلاين، وكل جلسة إلها نتيجة بتطلع فيها. هان كل إشي بالتفصيل.</p>
+      <a class="btn btn-sec" href="claude-workshop-guide.pdf" download>حمّل الدليل PDF</a>
+    </div>
+  </div>
+  <div class="card"><div class="pad"><div class="sec-t">الورشة إلك إذا:</div><ul class="list"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>بتسمع عن كلود وما بتعرف من وين تبلّش.</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>بتستخدم ChatGPT أو كلود، بس النتيجة ما بتعجبك.</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>عندك شغل بتكرره كل يوم، وبدك حدا يعمله معك.</span></li></ul><p class="note2">مش لازم تعرف برمجة، والمجموعات بتنقسم حسب المستوى.</p></div></div>
+  <section class="sess">
+  <div class="sh"><div class="num">1</div><div><div class="kick">الجلسة 1</div><h2>كلود من الصفر</h2></div></div>
+  <p class="intro">بتبني فيها الأساس، بدون مصطلحات معقدة.</p>
+  <ul class="list"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>المصطلحات اللي بتسمعها كل يوم، بكلمتين: الذكاء الاصطناعي، تعلّم الآلة، معالجة اللغة، الذكاء التوليدي، والتعلّم العميق.</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>مين أنثروبيك، وايش اللي بيميّز كلود.</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>جولة بالواجهة: المحادثة، رفع الملفات والصور، والإعدادات.</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>الخطط: المجاني والمدفوع، وأي وحدة بتناسب شغلك.</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>كيف تكتب طلب واضح يطلعلك نتيجة بتنفع من أول مرة.</span></li></ul>
+  <div class="out"><b>بتطلع منها:</b> أول مهمة حقيقية من شغلك خلصت على كلود.</div>
+</section>
+<section class="sess">
+  <div class="sh"><div class="num">2</div><div><div class="kick">الجلسة 2</div><h2>أقوى أدوات كلود</h2></div></div>
+  <p class="intro">هان بتنقل من محادثة عادية لشغل منظّم.</p>
+  <ul class="list"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>المشاريع (Projects): مساحة لكل شغل، بتحط فيها ملفاتك وتعليماتك مرة وحدة.</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>الملفات: تلخيص وتحليل ملفات PDF والجداول والصور، وتطلع منها تقارير جاهزة.</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>المهارات (Skills): بتعلّم كلود طريقتك بالشغل مرة وحدة، وبيعيدها كل مرة.</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>كيف تخليه يشتغل بطريقتك ويكتب بأسلوبك إنت.</span></li></ul>
+  <div class="out"><b>بتطلع منها:</b> مشروع على كلود بيعرف شغلك، وأول مهارة جاهزة إلك.</div>
+</section>
+<section class="sess">
+  <div class="sh"><div class="num">3</div><div><div class="kick">الجلسة 3</div><h2>كيف أنا بشتغل مع كلود كل يوم</h2></div></div>
+  <p class="intro">بتشوف الشغل الحقيقي، وبتطبّقه على شغلك.</p>
+  <ul class="list"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>شغلي اليومي مع كلود: التسويق، المحتوى، وإدارة الشغل.</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>أمثلة على مهام كانت تاخد مني وقت طويل، وكيف صارت تخلص أسرع.</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>بتطبّق على شغلك إنت، وكل واحد بيطلع بطريقة شغل لمجاله.</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>ملف أوامر جاهزة على مجال شغلك.</span></li></ul>
+  <div class="out"><b>بتطلع منها:</b> طريقة شغل يومية مع كلود، بتكمل عليها لحالك.</div>
+</section>
+<section class="sess guest">
+  <div class="sh"><div class="num">+</div><div><div class="kick">للايف بس</div><h2>جلسة مع ضيف مختص</h2></div></div>
+  <p class="intro">كيف تصلّح أي موقع بنيته على كلود ووقع معك.</p>
+</section>
+  <div class="card"><div class="pad"><div class="sec-t">الخيارين</div><div class="opts">
+  <div class="opt dark"><div class="oh"><div class="on">لايف</div><span class="badge">5 مقاعد بس</span></div><div class="price">$225</div><ul class="list"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>3 جلسات لايف أونلاين بمجموعة 5 حسب مستواك</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>جلسة الضيف عن تصليح المواقع</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>التسجيلات وملف الأوامر</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>متابعة أسبوعين على الواتساب</span></li></ul></div>
+  <div class="opt"><div class="oh"><div class="on">مسجّل</div><span class="badge">خصم</span></div><div class="price"><s>$150</s>$97</div><ul class="list"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>كورس مسجّل كامل، مصوّر خصيصاً</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>ملف الأوامر الجاهزة</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>بتتعلم على وقتك</span></li></ul></div>
+</div>
+    <a class="btn btn-pri" href="../">احجز مقعدك</a></div></div>
+  <div class="card"><div class="pad"><div class="sec-t">أسئلة بتتكرر</div><details><summary>لازم أكون بعرف برمجة؟<span class="arr">⌄</span></summary><p>لا. الورشة لأي حدا بيشتغل على كمبيوتر أو جوال.</p></details><details><summary>لازم يكون عندي اشتراك مدفوع بكلود؟<span class="arr">⌄</span></summary><p>مش لازم تبلّش فيه. بالجلسة الأولى بتعرف إذا بتحتاجه، وأي خطة بتناسبك.</p></details><details><summary>أنا مبتدئ، رح أضيع؟<span class="arr">⌄</span></summary><p>لا. المجموعات بتنقسم حسب المستوى، و5 أشخاص بس بكل مجموعة.</p></details><details><summary>امتى الموعد؟<span class="arr">⌄</span></summary><p>بعد الحجز بيوصلك موعد أول جلسة ورابطها على الواتساب.</p></details><details><summary>كيف بدفع؟<span class="arr">⌄</span></summary><p>بالبطاقة، أو من فلسطين عن طريق إي براق بالشيكل. كله من صفحة الحجز.</p></details></div></div>
+  <div class="foot">علاء الخضري · <a href="https://instagram.com/alaaalkhodaryofficial"><span dir="ltr">@alaaalkhodaryofficial</span></a></div>
+</div>
+</body>
+</html>
