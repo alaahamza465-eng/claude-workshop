@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>احجز مقعدك · ورشة احتراف كلود</title>
+<meta name="description" content="ورشة لايف أونلاين: كلود شغّال على شغلك إنت. 3 جلسات، 5 مقاعد بس بكل فوج.">
+<meta property="og:title" content="ورشة احتراف كلود من أنثروبيك">
+<meta property="og:description" content="3 جلسات لايف أونلاين · 5 مقاعد بس بكل فوج">
+<meta property="og:image" content="assets/banner.jpg">
+<meta name="theme-color" content="#120c09">
+<link rel="preload" href="assets/ts-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/ts-bold.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:TS;src:url(assets/ts-regular.woff2) format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:TS;src:url(assets/ts-bold.woff2) format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:TD;src:url(assets/td-bold.woff2) format('woff2');font-weight:700;font-display:swap}
+:root{
+  --bg:#120c09;--bg2:#1d130e;--card:#fbf6f1;--line:#efe2d8;--ink:#2a1d16;--muted:#6f5a4e;
+  --acc:#e0703a;--acc2:#f0a36e;--accInk:#1d130e;--ok:#2f9e6b;--err:#c4452c;
+  --r:22px;--shadow:0 30px 60px -20px rgba(0,0,0,.55),0 2px 0 rgba(255,255,255,.04) inset;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{min-height:100%}
+body{font-family:TS,Tahoma,Arial,sans-serif;color:var(--ink);background:var(--bg);
+  background:radial-gradient(900px 600px at 85% -10%,rgba(224,112,58,.28),transparent 60%),radial-gradient(700px 500px at -10% 110%,rgba(224,112,58,.18),transparent 60%),var(--bg);
+  background-attachment:fixed;line-height:1.7;-webkit-font-smoothing:antialiased}
+.wrap{max-width:540px;margin:0 auto;padding:18px 16px 40px}
+.top{display:flex;align-items:center;justify-content:space-between;color:#f3e3d7;padding:4px 4px 14px}
+.brand{font:700 15px TS;letter-spacing:.2px;opacity:.95}
+.brand span{color:var(--acc2)}
+.secure{font-size:12.5px;color:#cdb6a6;display:flex;align-items:center;gap:6px}
+.secure svg{width:14px;height:14px}
+/* progress */
+.prog{display:flex;gap:6px;margin:0 2px 14px}
+.prog i{flex:1;height:5px;border-radius:5px;background:rgba(255,255,255,.12);overflow:hidden;position:relative}
+.prog i::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--acc2),var(--acc));transform:scaleX(0);transform-origin:right;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.prog i.on::after{transform:scaleX(1)}
+.plabels{display:flex;justify-content:space-between;color:#bfa595;font-size:12px;margin:-6px 2px 14px}
+.plabels b{color:#f3e3d7;font-weight:700}
+/* card */
+.card{background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden;position:relative}
+.step{display:none;padding:26px 22px 24px;animation:in .45s cubic-bezier(.2,.8,.2,1)}
+.step.show{display:block}
+@keyframes in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+h1,h2{font-family:TD,TS,serif;font-weight:700;color:var(--ink);line-height:1.3}
+h1{font-size:30px}
+h2{font-size:24px;margin-bottom:6px}
+.lead{color:var(--muted);font-size:15.5px;margin-bottom:18px}
+.step.hero{padding:0}
+.hero img{display:block;width:100%;height:auto}
+.hero .in{padding:22px 22px 24px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
+.chip{font-size:13.5px;background:#f3e7de;color:#5a4336;border-radius:999px;padding:6px 12px}
+.chip b{color:var(--acc)}
+details{border:1px solid var(--line);border-radius:16px;margin:16px 0 0;background:#fff}
+summary{list-style:none;cursor:pointer;padding:14px 16px;font-weight:700;display:flex;justify-content:space-between;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary .arr{transition:transform .25s;color:var(--acc)}
+details[open] summary .arr{transform:rotate(180deg)}
+.sess{padding:0 16px 10px}
+.srow{display:flex;gap:12px;padding:10px 0;border-top:1px solid var(--line)}
+.num{flex:0 0 30px;height:30px;border-radius:50%;background:var(--bg2);color:var(--acc2);display:grid;place-items:center;font:700 14px TS}
+.srow b{display:block;font-size:15px}
+.srow span{font-size:14px;color:var(--muted)}
+.tag{display:inline-block;font:700 11px TS;color:#fff;background:var(--acc);border-radius:10px;padding:1px 8px;margin-inline-start:6px;vertical-align:2px}
+/* buttons */
+.btn{appearance:none;border:0;cursor:pointer;width:100%;font:700 17px TS;border-radius:16px;padding:16px 18px;display:flex;align-items:center;justify-content:center;gap:10px;transition:transform .15s, box-shadow .2s, opacity .2s}
+.btn:active{transform:scale(.985)}
+.btn-pri{background:linear-gradient(180deg,#e9824d,var(--acc));color:#fff;box-shadow:0 12px 24px -10px rgba(224,112,58,.7)}
+.btn-dark{background:var(--bg2);color:#fff}
+.btn-ghost{background:transparent;color:var(--muted);font-weight:400;font-size:15px;padding:12px}
+.btn[disabled]{opacity:.55;cursor:not-allowed}
+.note{font-size:13px;color:var(--muted);text-align:center;margin-top:10px}
+.back{display:inline-flex;align-items:center;gap:6px;color:var(--muted);font-size:14px;background:none;border:0;cursor:pointer;margin:-6px 0 10px;padding:4px 0;font-family:TS}
+/* options */
+.opts{display:grid;gap:12px}
+.opt{position:relative;border:2px solid var(--line);border-radius:18px;padding:18px 18px 16px;background:#fff;cursor:pointer;transition:border-color .2s, box-shadow .2s, transform .15s;text-align:right;font-family:TS;color:var(--ink);width:100%}
+.opt:hover{border-color:#e8c9b5}
+.opt.sel{border-color:var(--acc);box-shadow:0 0 0 4px rgba(224,112,58,.14)}
+.opt.dark{background:linear-gradient(160deg,#2a1b14,#1a110c);border-color:#3a271d;color:#f6e9df}
+.opt.dark.sel{border-color:var(--acc2);box-shadow:0 0 0 4px rgba(240,163,110,.22)}
+.oh{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.on{font:700 19px TS}
+.badge{font:700 11.5px TS;color:var(--accInk);background:var(--acc2);border-radius:999px;padding:4px 10px;white-space:nowrap}
+.price{font:700 32px TS;margin:6px 0 8px;direction:ltr;text-align:right}
+.price small{font-size:15px;font-weight:400;opacity:.75}
+.opt ul{list-style:none;display:grid;gap:4px}
+.opt li{font-size:14.5px;padding-inline-start:22px;position:relative}
+.opt li::before{content:"";position:absolute;right:0;top:9px;width:12px;height:7px;border:2px solid var(--acc);border-top:0;border-left:0;transform:rotate(45deg) translate(-2px,-2px);width:6px;height:11px}
+.opt.dark li::before{border-color:var(--acc2)}
+.radio{position:absolute;left:16px;top:18px;width:22px;height:22px;border-radius:50%;border:2px solid #d9c5b8}
+.opt.dark .radio{border-color:#6a4f41}
+.opt.sel .radio{border-color:var(--acc);background:radial-gradient(circle,var(--acc) 0 5px,transparent 6px)}
+.opt.dark.sel .radio{border-color:var(--acc2);background:radial-gradient(circle,var(--acc2) 0 5px,transparent 6px)}
+/* fields */
+.field{margin-bottom:14px}
+.field label{display:block;font-weight:700;font-size:14.5px;margin-bottom:6px}
+.field input{width:100%;font:16px TS;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:14px 14px;outline:none;transition:border-color .2s, box-shadow .2s}
+.field input:focus{border-color:var(--acc);box-shadow:0 0 0 4px rgba(224,112,58,.14)}
+.field input.ltr{direction:ltr;text-align:right}
+.field .hint{font-size:12.5px;color:var(--muted);margin-top:5px}
+.field.bad input{border-color:var(--err)}
+.field .errm{display:none;font-size:12.5px;color:var(--err);margin-top:5px}
+.field.bad .errm{display:block}
+/* summary pill */
+.sum{display:flex;justify-content:space-between;align-items:center;background:#f3e7de;border-radius:14px;padding:12px 14px;margin-bottom:16px;font-size:14.5px}
+.sum b{font-size:16px}
+/* qr */
+.amount{text-align:center;margin:4px 0 14px}
+.amount .v{font:700 40px TS;color:var(--ink);line-height:1.2}
+.amount .v small{font-size:18px;color:var(--muted);font-weight:400}
+.amount .s{font-size:13.5px;color:var(--muted)}
+.qrbox{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;text-align:center}
+.qrbox img{width:210px;height:210px;image-rendering:pixelated;display:block;margin:0 auto}
+.qrbox .cap{font-size:13.5px;color:var(--muted);margin-top:10px}
+.mini{display:flex;gap:8px;justify-content:center;margin-top:12px}
+.mini a,.mini button{font:700 13.5px TS;color:var(--acc);background:#fdf1e9;border:0;border-radius:10px;padding:8px 12px;text-decoration:none;cursor:pointer}
+.tip{font-size:13px;color:var(--muted);background:#f7efe8;border-radius:12px;padding:10px 12px;margin-top:12px}
+.drop{display:block;margin-top:18px;border:2px dashed #e2cbbb;border-radius:18px;padding:20px;text-align:center;cursor:pointer;background:#fffaf6;transition:border-color .2s, background .2s;position:relative}
+.drop:hover{border-color:var(--acc)}
+.drop.has{border-style:solid;border-color:var(--ok);background:#f3fbf6}
+.drop input{position:absolute;inset:0;opacity:0;cursor:pointer}
+.drop .ic{width:44px;height:44px;border-radius:12px;background:#fdebdf;display:grid;place-items:center;margin:0 auto 8px;color:var(--acc)}
+.drop b{display:block}
+.drop span{font-size:13px;color:var(--muted)}
+.drop img.pv{max-width:100%;max-height:220px;border-radius:12px;display:block;margin:0 auto 8px}
+.stepsmall{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;margin:8px 0}
+.stepsmall i{flex:0 0 24px;height:24px;border-radius:50%;background:var(--bg2);color:var(--acc2);font:700 12px TS;display:grid;place-items:center;font-style:normal;margin-top:2px}
+/* loading */
+.spin{width:20px;height:20px;border:3px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:sp 0.8s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+.alert{display:none;background:#fdecea;color:#8a2b19;border-radius:12px;padding:10px 12px;font-size:14px;margin-bottom:12px}
+.alert.show{display:block}
+/* success */
+.done{text-align:center}
+.check{width:84px;height:84px;margin:6px auto 14px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#ffb98c,var(--acc));display:grid;place-items:center;box-shadow:0 18px 40px -12px rgba(224,112,58,.7);animation:pop .6s cubic-bezier(.2,1.4,.4,1)}
+@keyframes pop{from{transform:scale(.3);opacity:0}to{transform:none;opacity:1}}
+.check svg{width:40px;height:40px;stroke:#fff;stroke-width:3.2;fill:none;stroke-dasharray:40;stroke-dashoffset:40;animation:draw .5s .35s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.next{text-align:right;background:#fff;border:1px solid var(--line);border-radius:16px;padding:6px 16px;margin:16px 0}
+.ref{font-size:12.5px;color:var(--muted);margin-top:10px;direction:ltr}
+.foot{color:#9c8475;font-size:12.5px;text-align:center;margin-top:18px}
+.foot a{color:var(--acc2);text-decoration:none}
+.conf{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:9}
+.conf i{position:absolute;top:-12px;width:8px;height:14px;border-radius:2px;opacity:.9;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg)}}
+@media (min-width:600px){.wrap{padding-top:34px}.step{padding:30px 30px 28px}h1{font-size:34px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <div class="brand">ورشة <span>احتراف كلود</span></div>
+    <div class="secure"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 1 1 8 0v3"/></svg>حجز آمن</div>
+  </div>
+
+  <div id="progWrap" style="display:none">
+    <div class="prog"><i></i><i></i><i></i><i></i></div>
+    <div class="plabels"><span>الخيار</span><span>معلوماتك</span><span>الدفع</span><span>تأكيد</span></div>
+  </div>
+
+  <div class="card">
+    <!-- 0 · intro -->
+    <section class="step show hero" data-s="0">
+      <img src="assets/banner.jpg" alt="ورشة احتراف كلود من أنثروبيك">
+      <div class="in">
+        <h1>بتطلع وكلود شغّال على شغلك إنت</h1>
+        <p class="lead" style="margin:8px 0 0">3 جلسات لايف أونلاين، بمجموعة صغيرة حسب مستواك. مش بس بتعرف عن كلود، بتطلع وإنت بتشتغل فيه.</p>
+        <div class="chips">
+          <span class="chip"><b>●</b> 5 مقاعد بس بكل فوج</span>
+          <span class="chip"><b>●</b> مساعد بيعرف شغلك</span>
+          <span class="chip"><b>●</b> أوامر جاهزة لمهامك</span>
+        </div>
+        <details>
+          <summary>شو في بالجلسات؟ <span class="arr">⌄</span></summary>
+          <div class="sess">
+            <div class="srow"><div class="num">1</div><div><b>كلود من الصفر</b><span>يعني ايش الذكاء الاصطناعي ببساطة، الواجهة، الخطط، وأول شغل حقيقي عليه</span></div></div>
+            <div class="srow"><div class="num">2</div><div><b>أقوى أدوات كلود</b><span>المشاريع والملفات والمهارات، وكيف تخليه يشتغل بطريقتك</span></div></div>
+            <div class="srow"><div class="num">3</div><div><b>كيف أنا بشتغل مع كلود كل يوم</b><span>وبتطبّق على شغلك إنت</span></div></div>
+            <div class="srow"><div class="num">+</div><div><b>جلسة مع ضيف مختص<span class="tag">للايف</span></b><span>كيف تصلّح أي موقع بنيته على كلود ووقع معك</span></div></div>
+          </div>
+        </details>
+        <div style="height:18px"></div>
+        <button class="btn btn-pri" data-go="1">يلا نحجز مقعدك <span aria-hidden="true">←</span></button>
+        <p class="note">الحجز بياخد أقل من دقيقتين</p>
+      </div>
+    </section>
+
+    <!-- 1 · choose option -->
+    <section class="step" data-s="1">
+      <button class="back" data-go="0">→ رجوع</button>
+      <h2>اختار اللي بيناسبك</h2>
+      <p class="lead">الخيارين فيهم نفس المحتوى. الفرق إنك باللايف معي مباشرة.</p>
+      <div class="opts">
+        <button type="button" class="opt dark" data-opt="live">
+          <span class="radio"></span>
+          <div class="oh"><div class="on">لايف</div><span class="badge" style="margin-left:30px">5 مقاعد بس</span></div>
+          <div class="price">$225</div>
+          <ul>
+            <li>3 جلسات لايف بمجموعة 5 حسب مستواك</li>
+            <li>جلسة الضيف عن تصليح المواقع</li>
+            <li>التسجيلات وملف أوامر جاهزة لشغلك</li>
+            <li>متابعة أسبوعين على الواتساب</li>
+          </ul>
+        </button>
+        <button type="button" class="opt" data-opt="rec">
+          <span class="radio"></span>
+          <div class="oh"><div class="on">مسجّل</div></div>
+          <div class="price">$97</div>
+          <ul>
+            <li>تسجيل الجلسات التلاتة</li>
+            <li>ملف الأوامر الجاهزة</li>
+            <li>بيوصلك بعد ما يخلص الفوج اللايف</li>
+          </ul>
+        </button>
+      </div>
+    </section>
+
+    <!-- 2 · details -->
+    <section class="step" data-s="2">
+      <button class="back" data-go="1">→ رجوع</button>
+      <h2>معلوماتك</h2>
+      <p class="lead">عشان نثبّت مقعدك ونبعتلك رابط الجلسات.</p>
+      <div class="sum"><span>خيارك</span><b id="sumOpt">—</b></div>
+      <div class="field" id="fName"><label for="name">الاسم</label><input id="name" autocomplete="name" placeholder="اسمك الكامل"><div class="errm">اكتب اسمك</div></div>
+      <div class="field" id="fPhone"><label for="phone">رقم الواتساب</label><input id="phone" class="ltr" type="tel" inputmode="tel" autocomplete="tel" placeholder="+970 59 000 0000"><div class="hint">مع رمز الدولة</div><div class="errm">اكتب رقم واتساب صحيح مع رمز الدولة</div></div>
+      <div class="field" id="fEmail"><label for="email">الإيميل</label><input id="email" class="ltr" type="email" inputmode="email" autocomplete="email" placeholder="name@gmail.com"><div class="errm">اكتب إيميل صحيح</div></div>
+      <button class="btn btn-pri" id="toPay">التالي <span aria-hidden="true">←</span></button>
+    </section>
+
+    <!-- 3 · where -->
+    <section class="step" data-s="3">
+      <button class="back" data-go="2">→ رجوع</button>
+      <h2>من وين رح تدفع؟</h2>
+      <p class="lead">اختار الطريقة الأسهل إلك.</p>
+      <div class="opts">
+        <button type="button" class="opt" data-pay="iburaq">
+          <span class="radio"></span>
+          <div class="on">من فلسطين أو غزة</div>
+          <div style="color:var(--muted);font-size:14.5px;margin-top:4px">بتمسح كود الدفع من تطبيق إي براق، البنك الإسلامي الفلسطيني</div>
+          <div class="price" style="font-size:24px;margin-top:8px" id="ilsLbl">—</div>
+        </button>
+        <button type="button" class="opt" data-pay="card">
+          <span class="radio"></span>
+          <div class="on">من برّا فلسطين</div>
+          <div style="color:var(--muted);font-size:14.5px;margin-top:4px">بالبطاقة، والدفع آمن ومشفّر عن طريق <bdi>Stripe</bdi></div>
+          <div class="price" style="font-size:24px;margin-top:8px" id="usdLbl">—</div>
+        </button>
+      </div>
+    </section>
+
+    <!-- 4a · iburaq -->
+    <section class="step" data-s="4a">
+      <button class="back" data-go="3">→ رجوع</button>
+      <h2>ادفع بإي براق</h2>
+      <div class="amount"><div class="v" id="ilsBig">—</div><div class="s" id="ilsSub">—</div></div>
+      <div class="qrbox">
+        <img src="assets/qr.png" alt="كود الدفع عبر إي براق">
+        <div class="cap">امسح الكود من تطبيق إي براق، وحط المبلغ اللي فوق</div>
+        <div class="mini"><a href="assets/qr.png" download="كود-الدفع-ورشة-كلود.png">حفظ الكود</a></div>
+      </div>
+      <div class="tip">فاتح من نفس الجوال؟ احفظ صورة الكود. وإذا التطبيق ما بيقرأ الكود من الصور، افتح هالصفحة من جهاز تاني وامسحه.</div>
+      <label class="drop" id="drop">
+        <input type="file" id="file" accept="image/*">
+        <div id="dropIn"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 16V4M6 10l6-6 6 6"/><path d="M4 20h16"/></svg></div><b>ارفع سكرين شوت الدفع</b><span>صورة الإيصال من التطبيق بعد التحويل</span></div>
+      </label>
+      <div style="height:16px"></div>
+      <div class="alert" id="err1"></div>
+      <button class="btn btn-pri" id="sendReceipt" disabled>أرسل الإيصال وثبّت مقعدي</button>
+      <p class="note">بنراجع الإيصال وبنأكدلك على الواتساب</p>
+    </section>
+
+    <!-- 4b · card -->
+    <section class="step" data-s="4b">
+      <button class="back" data-go="3">→ رجوع</button>
+      <h2>ادفع بالبطاقة</h2>
+      <p class="lead">رح تنتقل لصفحة الدفع الآمنة على <bdi>Stripe</bdi>، وبعد الدفع بترجع هان لحالك.</p>
+      <div class="sum"><span id="cardOpt">—</span><b id="cardAmt">—</b></div>
+      <div class="stepsmall"><i>1</i><span>بتدخل بيانات البطاقة على صفحة <bdi>Stripe</bdi></span></div>
+      <div class="stepsmall"><i>2</i><span>بتوصلك فاتورة الدفع على إيميلك من <bdi>Stripe</bdi></span></div>
+      <div class="stepsmall"><i>3</i><span>بنثبّت مقعدك وبنتواصل معك على الواتساب</span></div>
+      <div style="height:16px"></div>
+      <div class="alert" id="err2"></div>
+      <button class="btn btn-dark" id="goStripe"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 1 1 8 0v3"/></svg> كمّل للدفع الآمن</button>
+      <p class="note">ما بنشوف ولا بنحفظ بيانات بطاقتك</p>
+    </section>
+
+    <!-- 5 · done -->
+    <section class="step done" data-s="5">
+      <div class="check"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+      <h2 id="doneT">استلمنا حجزك</h2>
+      <p class="lead" id="doneL">بنراجع الإيصال وبنأكدلك على الواتساب خلال يوم.</p>
+      <div class="next">
+        <div class="stepsmall"><i>1</i><span id="n1">بنأكدلك الحجز على الواتساب</span></div>
+        <div class="stepsmall"><i>2</i><span id="n2">بنحطك بالمجموعة اللي بتناسب مستواك</span></div>
+        <div class="stepsmall"><i>3</i><span id="n3">بيوصلك موعد أول جلسة ورابطها</span></div>
+      </div>
+      <a class="btn btn-pri" id="waBtn" href="#" target="_blank" rel="noopener" style="text-decoration:none">عندك سؤال؟ احكيلي على الواتساب</a>
+      <div class="ref" id="ref"></div>
+    </section>
+  </div>
+
+  <div class="foot">علاء الخضري · <a href="https://instagram.com/alaaalkhodaryofficial" target="_blank" rel="noopener" dir="ltr">@alaaalkhodaryofficial</a></div>
+</div>
+<div class="conf" id="conf"></div>
+
+<script>
+const CFG = {
+  api: 'https://script.google.com/macros/s/AKfycbzVgPGUXlw5IWvywnLBWM47I5_f4MRlGHk7Yp6PwLe-o4TEhZ49pM_LSQn4al7JYtUuog/exec',
+  wa: '970569000711',
+  stripe: { live: 'https://buy.stripe.com/dRm14o7Z68hX9jhgUr1gs04', rec: 'https://buy.stripe.com/5kQcN62EMbu92UT33B1gs05' },
+  price: { live: { usd: 225, ils: 675, name: 'لايف' }, rec: { usd: 97, ils: 291, name: 'مسجّل' } }
+};
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const st = { opt: null, pay: null, file: null, ref: 'CW' + Date.now().toString(36).toUpperCase() };
+const q = new URLSearchParams(location.search);
+const STEP_PROG = { '0': 0, '1': 1, '2': 2, '3': 3, '4a': 3, '4b': 3, '5': 4 };
+
+function go(s) {
+  $$('.step').forEach(x => x.classList.toggle('show', x.dataset.s === String(s)));
+  const p = STEP_PROG[s];
+  $('#progWrap').style.display = s === '0' || s === 0 ? 'none' : 'block';
+  $$('.prog i').forEach((i, k) => i.classList.toggle('on', k < p));
+  $$('.plabels span').forEach((l, k) => l.innerHTML = k === p - 1 ? '<b>' + l.textContent + '</b>' : l.textContent);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  try { history.replaceState(null, '', location.pathname + location.search + '#s' + s); } catch (e) {}
+}
+$$('[data-go]').forEach(b => b.addEventListener('click', () => go(b.dataset.go)));
+
+// prefill
+['n:name', 'p:phone', 'e:email'].forEach(x => { const [k, id] = x.split(':'); if (q.get(k)) $('#' + id).value = q.get(k); });
+try { const sv = JSON.parse(localStorage.getItem('cw_form') || '{}'); ['name', 'phone', 'email'].forEach(id => { if (!$('#' + id).value && sv[id]) $('#' + id).value = sv[id]; }); } catch (e) {}
+
+function pick(opt) {
+  st.opt = opt;
+  $$('[data-opt]').forEach(b => b.classList.toggle('sel', b.dataset.opt === opt));
+  const P = CFG.price[opt];
+  $('#sumOpt').textContent = P.name + ' · $' + P.usd;
+  $('#ilsLbl').textContent = P.ils + ' شيكل';
+  $('#usdLbl').textContent = '$' + P.usd;
+  $('#ilsBig').innerHTML = P.ils + ' <small>شيكل</small>';
+  $('#ilsSub').textContent = 'خيار ' + P.name + ' · يعادل $' + P.usd;
+  $('#cardOpt').textContent = 'خيار ' + P.name;
+  $('#cardAmt').textContent = '$' + P.usd;
+}
+$$('[data-opt]').forEach(b => b.addEventListener('click', () => { pick(b.dataset.opt); setTimeout(() => go(2), 260); }));
+if (q.get('o') === 'live' || q.get('o') === 'rec') pick(q.get('o'));
+
+function validate() {
+  const name = $('#name').value.trim(), phone = $('#phone').value.trim(), email = $('#email').value.trim();
+  const okN = name.length >= 2, okP = /^\+?[0-9\s\-]{8,18}$/.test(phone.replace(/^00/, '+')), okE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+  $('#fName').classList.toggle('bad', !okN); $('#fPhone').classList.toggle('bad', !okP); $('#fEmail').classList.toggle('bad', !okE);
+  if (okN && okP && okE) { try { localStorage.setItem('cw_form', JSON.stringify({ name, phone, email })); } catch (e) {} }
+  return okN && okP && okE;
+}
+$('#toPay').addEventListener('click', () => { if (!st.opt) return go(1); if (validate()) go(3); });
+$$('#fName input,#fPhone input,#fEmail input').forEach(i => i.addEventListener('input', () => i.parentElement.classList.remove('bad')));
+
+$$('[data-pay]').forEach(b => b.addEventListener('click', () => {
+  st.pay = b.dataset.pay;
+  $$('[data-pay]').forEach(x => x.classList.toggle('sel', x === b));
+  setTimeout(() => go(st.pay === 'iburaq' ? '4a' : '4b'), 260);
+}));
+
+// receipt
+$('#file').addEventListener('change', async e => {
+  const f = e.target.files[0]; if (!f) return;
+  st.file = f;
+  const url = URL.createObjectURL(f);
+  $('#dropIn').innerHTML = '<img class="pv" src="' + url + '" alt=""><b>تمام، الإيصال جاهز</b><span>اضغط إذا بدك تغيّر الصورة</span>';
+  $('#drop').classList.add('has');
+  $('#sendReceipt').disabled = false;
+});
+
+function toB64(file) {
+  return new Promise(res => {
+    const img = new Image(), url = URL.createObjectURL(file);
+    img.onload = () => {
+      const m = 1600, sc = Math.min(1, m / Math.max(img.width, img.height));
+      const c = document.createElement('canvas'); c.width = Math.round(img.width * sc); c.height = Math.round(img.height * sc);
+      c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+      res({ data: c.toDataURL('image/jpeg', 0.86).split(',')[1], mime: 'image/jpeg' });
+    };
+    img.onerror = () => { const r = new FileReader(); r.onload = () => res({ data: String(r.result).split(',')[1], mime: file.type || 'application/octet-stream' }); r.readAsDataURL(file); };
+    img.src = url;
+  });
+}
+function payload(extra) {
+  const P = CFG.price[st.opt];
+  return Object.assign({ ref: st.ref, name: $('#name').value.trim(), phone: $('#phone').value.trim(), email: $('#email').value.trim(), option: st.opt, method: st.pay, amount: st.pay === 'iburaq' ? P.ils + ' ILS' : P.usd + ' USD', ua: navigator.userAgent.slice(0, 120) }, extra || {});
+}
+async function post(data, ms) {
+  const ctl = new AbortController(); const t = setTimeout(() => ctl.abort(), ms || 30000);
+  try {
+    const r = await fetch(CFG.api, { method: 'POST', body: JSON.stringify(data), headers: { 'Content-Type': 'text/plain;charset=utf-8' }, signal: ctl.signal });
+    const j = await r.json(); return j;
+  } finally { clearTimeout(t); }
+}
+function busy(btn, on, label) {
+  btn.disabled = on;
+  if (on) { btn.dataset.l = btn.innerHTML; btn.innerHTML = '<span class="spin"></span> ' + (label || 'لحظة...'); }
+  else if (btn.dataset.l) btn.innerHTML = btn.dataset.l;
+}
+function waLink(text) { return 'https://wa.me/' + CFG.wa + '?text=' + encodeURIComponent(text); }
+
+$('#sendReceipt').addEventListener('click', async () => {
+  const btn = $('#sendReceipt'); $('#err1').classList.remove('show');
+  if (!st.file) return;
+  busy(btn, true, 'بنرفع الإيصال...');
+  try {
+    const f = await toB64(st.file);
+    const j = await post(payload({ file: f.data, mime: f.mime }));
+    if (!j || !j.ok) throw new Error(j && j.error || 'fail');
+    success('iburaq');
+  } catch (e) {
+    busy(btn, false);
+    $('#err1').innerHTML = 'ما زبط الرفع هالمرة. جرّب كمان مرة، أو <a href="' + waLink('أهلين علاء، دفعت لورشة كلود (' + CFG.price[st.opt].name + ') وبدي أبعت الإيصال') + '" target="_blank" rel="noopener">ابعت الإيصال على الواتساب</a>.';
+    $('#err1').classList.add('show');
+  }
+});
+
+$('#goStripe').addEventListener('click', async () => {
+  const btn = $('#goStripe'); busy(btn, true, 'بنحوّلك لصفحة الدفع...');
+  try { localStorage.setItem('cw_pending', JSON.stringify({ ref: st.ref, opt: st.opt, name: $('#name').value.trim() })); } catch (e) {}
+  try { await post(payload(), 6000); } catch (e) {}
+  const u = new URL(CFG.stripe[st.opt]);
+  u.searchParams.set('prefilled_email', $('#email').value.trim());
+  u.searchParams.set('client_reference_id', st.ref);
+  location.href = u.toString();
+});
+
+function confetti() {
+  const c = $('#conf'), cols = ['#e0703a', '#f0a36e', '#ffd2b3', '#2f9e6b', '#fff'];
+  for (let i = 0; i < 70; i++) {
+    const p = document.createElement('i');
+    p.style.left = Math.random() * 100 + 'vw'; p.style.background = cols[i % cols.length];
+    p.style.animationDuration = (1.8 + Math.random() * 1.6) + 's'; p.style.animationDelay = (Math.random() * .5) + 's';
+    p.style.transform = 'rotate(' + Math.random() * 360 + 'deg)'; c.appendChild(p);
+  }
+  setTimeout(() => c.innerHTML = '', 4200);
+}
+function success(kind, ref, name) {
+  const n = (name || $('#name').value.trim()).split(' ')[0];
+  $('#doneT').textContent = (kind === 'card' ? 'تم الدفع' : 'استلمنا حجزك') + (n ? ' يا ' + n : '') + ' 🎉';
+  $('#doneL').textContent = kind === 'card' ? 'وصلتك فاتورة الدفع على إيميلك، وحجزك صار مثبّت.' : 'بنراجع الإيصال وبنأكدلك على الواتساب خلال يوم.';
+  $('#n1').textContent = kind === 'card' ? 'بنتواصل معك على الواتساب' : 'بنأكدلك الحجز على الواتساب';
+  const opt = st.opt || (function(){ try { return JSON.parse(localStorage.getItem('cw_pending') || '{}').opt; } catch (e) { return null; } })();
+  if (opt === 'rec') { $('#n2').textContent = 'بيوصلك التسجيل وملف الأوامر بعد ما يخلص الفوج اللايف'; $('#n3').textContent = 'وإذا عندك أي سؤال، أنا موجود على الواتساب'; }
+  $('#ref').textContent = 'رقم الحجز: ' + (ref || st.ref);
+  $('#waBtn').href = waLink('أهلين علاء، حجزت بورشة كلود. رقم الحجز: ' + (ref || st.ref));
+  go(5); confetti();
+  try { localStorage.removeItem('cw_pending'); } catch (e) {}
+}
+// return from Stripe
+if (q.get('paid') === '1') {
+  let p = {}; try { p = JSON.parse(localStorage.getItem('cw_pending') || '{}'); } catch (e) {}
+  success('card', q.get('ref') || p.ref, p.name || '');
+} else if (location.hash.startsWith('#s') && st.opt) { /* keep intro */ }
+</script>
+</body>
+</html>
