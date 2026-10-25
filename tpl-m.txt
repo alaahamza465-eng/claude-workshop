@@ -36,13 +36,13 @@
 <div style="font:bold 30px 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#f0a36e;margin:4px 0 8px 0">225 <span style="font-size:15px;color:#f6e9df">دولار</span></div>
 <div style="font:14px/1.8 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#f6e9df">• 3 جلسات لايف بمجموعة 5</div><div style="font:14px/1.8 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#f6e9df">• جلسة الضيف</div><div style="font:14px/1.8 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#f6e9df">• التسجيلات وملف الأوامر</div><div style="font:14px/1.8 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#f6e9df">• متابعة أسبوعين واتساب</div></td></tr></table></td>
 <td valign="top" width="50%" style="padding:0 5px"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" dir="rtl" style="background:#ffffff;border:1px solid #efe2d8;border-radius:16px"><tr><td style="padding:18px 18px" align="right">
-<div style="height:22px">&nbsp;</div>
+<div style="height:22px"><span style="font:bold 11px 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#1d130e;background:#f0a36e;padding:3px 8px;border-radius:9px">خصم</span></div>
 <div style="font:bold 19px 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#2a1d16;margin-top:6px">مسجّل</div>
-<div style="font:bold 30px 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#2a1d16;margin:4px 0 8px 0">97 <span style="font-size:15px;color:#6f5a4e">دولار</span></div>
-<div style="font:14px/1.8 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#6f5a4e">• تسجيل الجلسات التلاتة</div><div style="font:14px/1.8 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#6f5a4e">• ملف الأوامر الجاهزة</div><div style="font:14px/1.8 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#6f5a4e">• بيوصلك بعد الفوج</div></td></tr></table></td>
+<div style="font:bold 30px 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#2a1d16;margin:4px 0 8px 0">97 <span style="font-size:15px;color:#6f5a4e">دولار</span> <s style="font:16px 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#a8968a">150</s></div>
+<div style="font:14px/1.8 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#6f5a4e">• كورس مسجّل كامل، مصوّر خصيصاً</div><div style="font:14px/1.8 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#6f5a4e">• ملف الأوامر الجاهزة</div><div style="font:14px/1.8 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#6f5a4e">• بتتعلم على وقتك</div></td></tr></table></td>
 </tr></table></td></tr>
 <tr><td style="padding:16px 32px 0 32px" align="right">
-<div style="font:15px/1.8 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#6f5a4e">الدفع بالبطاقة، أو من فلسطين وغزة عن طريق إي براق بالشيكل. كله من نفس الصفحة.</div>
+<div style="font:15px/1.8 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#6f5a4e">الدفع بالبطاقة، أو من فلسطين عن طريق إي براق بالشيكل. كله من نفس الصفحة.</div>
 <div style="font:15px/1.8 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#6f5a4e">موعد أول جلسة ورابطها بيوصلوك على الواتساب بعد الحجز.</div>
 </td></tr>
 <tr><td align="center" style="padding:24px 32px 8px 32px"><table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"><tr><td align="center" style="background:#e0703a;border-radius:12px">

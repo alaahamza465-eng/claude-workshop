@@ -85,6 +85,7 @@ details[open] summary .arr{transform:rotate(180deg)}
 .badge{font:700 11.5px TS;color:var(--accInk);background:var(--acc2);border-radius:999px;padding:4px 10px;white-space:nowrap}
 .price{font:700 32px TS;margin:6px 0 8px;direction:ltr;text-align:right}
 .price small{font-size:15px;font-weight:400;opacity:.75}
+.price s.was{font-size:.6em;font-weight:400;opacity:.5;margin-right:10px;text-decoration-thickness:2px}
 .opt ul{list-style:none;display:grid;gap:4px}
 .opt li{font-size:14.5px;padding-inline-start:22px;position:relative}
 .opt li::before{content:"";position:absolute;right:0;top:9px;width:12px;height:7px;border:2px solid var(--acc);border-top:0;border-left:0;transform:rotate(45deg) translate(-2px,-2px);width:6px;height:11px}
@@ -192,7 +193,7 @@ details[open] summary .arr{transform:rotate(180deg)}
     <section class="step" data-s="1">
       <button class="back" data-go="0">→ رجوع</button>
       <h2>اختار اللي بيناسبك</h2>
-      <p class="lead">الخيارين فيهم نفس المحتوى. الفرق إنك باللايف معي مباشرة.</p>
+      <p class="lead">لايف معي مباشرة بمجموعة صغيرة، أو كورس مسجّل بتتعلم فيه على وقتك.</p>
       <div class="opts">
         <button type="button" class="opt dark" data-opt="live">
           <span class="radio"></span>
@@ -207,12 +208,12 @@ details[open] summary .arr{transform:rotate(180deg)}
         </button>
         <button type="button" class="opt" data-opt="rec">
           <span class="radio"></span>
-          <div class="oh"><div class="on">مسجّل</div></div>
-          <div class="price">$97</div>
+          <div class="oh"><div class="on">مسجّل</div><span class="badge" style="margin-left:30px">خصم</span></div>
+          <div class="price"><s class="was">$150</s>$97</div>
           <ul>
-            <li>تسجيل الجلسات التلاتة</li>
+            <li>كورس مسجّل كامل، مصوّر خصيصاً</li>
             <li>ملف الأوامر الجاهزة</li>
-            <li>بيوصلك بعد ما يخلص الفوج اللايف</li>
+            <li>بتتعلم على وقتك</li>
           </ul>
         </button>
       </div>
@@ -238,7 +239,7 @@ details[open] summary .arr{transform:rotate(180deg)}
       <div class="opts">
         <button type="button" class="opt" data-pay="iburaq">
           <span class="radio"></span>
-          <div class="on">من فلسطين أو غزة</div>
+          <div class="on">من فلسطين</div>
           <div style="color:var(--muted);font-size:14.5px;margin-top:4px">بتمسح كود الدفع من تطبيق إي براق، البنك الإسلامي الفلسطيني</div>
           <div class="price" style="font-size:24px;margin-top:8px" id="ilsLbl">—</div>
         </button>
@@ -280,7 +281,7 @@ details[open] summary .arr{transform:rotate(180deg)}
       <div class="sum"><span id="cardOpt">—</span><b id="cardAmt">—</b></div>
       <div class="stepsmall"><i>1</i><span>بتدخل بيانات البطاقة على صفحة <bdi>Stripe</bdi></span></div>
       <div class="stepsmall"><i>2</i><span>بتوصلك فاتورة الدفع على إيميلك من <bdi>Stripe</bdi></span></div>
-      <div class="stepsmall"><i>3</i><span>بنثبّت مقعدك وبنتواصل معك على الواتساب</span></div>
+      <div class="stepsmall"><i>3</i><span id="cardS3">بنثبّت مقعدك وبنتواصل معك على الواتساب</span></div>
       <div style="height:16px"></div>
       <div class="alert" id="err2"></div>
       <button class="btn btn-dark" id="goStripe"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 1 1 8 0v3"/></svg> كمّل للدفع الآمن</button>
@@ -311,7 +312,7 @@ const CFG = {
   api: 'https://script.google.com/macros/s/AKfycbzVgPGUXlw5IWvywnLBWM47I5_f4MRlGHk7Yp6PwLe-o4TEhZ49pM_LSQn4al7JYtUuog/exec',
   wa: '970569000711',
   stripe: { live: 'https://buy.stripe.com/dRm14o7Z68hX9jhgUr1gs04', rec: 'https://buy.stripe.com/5kQcN62EMbu92UT33B1gs05' },
-  price: { live: { usd: 225, ils: 675, name: 'لايف' }, rec: { usd: 97, ils: 291, name: 'مسجّل' } }
+  price: { live: { usd: 225, ils: 675, name: 'لايف' }, rec: { usd: 97, ils: 291, wasUsd: 150, wasIls: 450, name: 'مسجّل' } }
 };
 const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
 const st = { opt: null, pay: null, file: null, ref: 'CW' + Date.now().toString(36).toUpperCase() };
@@ -338,8 +339,9 @@ function pick(opt) {
   $$('[data-opt]').forEach(b => b.classList.toggle('sel', b.dataset.opt === opt));
   const P = CFG.price[opt];
   $('#sumOpt').textContent = P.name + ' · $' + P.usd;
-  $('#ilsLbl').textContent = P.ils + ' شيكل';
-  $('#usdLbl').textContent = '$' + P.usd;
+  $('#ilsLbl').innerHTML = (P.wasIls ? '<s class="was">' + P.wasIls + '</s>' : '') + '<span dir="rtl">' + P.ils + ' شيكل</span>';
+  $('#usdLbl').innerHTML = (P.wasUsd ? '<s class="was">$' + P.wasUsd + '</s>' : '') + '$' + P.usd;
+  $('#cardS3').textContent = opt === 'rec' ? 'بنبعتلك الكورس وملف الأوامر على الواتساب' : 'بنثبّت مقعدك وبنتواصل معك على الواتساب';
   $('#ilsBig').innerHTML = P.ils + ' <small>شيكل</small>';
   $('#ilsSub').textContent = 'خيار ' + P.name + ' · يعادل $' + P.usd;
   $('#cardOpt').textContent = 'خيار ' + P.name;
@@ -447,7 +449,7 @@ function success(kind, ref, name) {
   $('#doneL').textContent = kind === 'card' ? 'وصلتك فاتورة الدفع على إيميلك، وحجزك صار مثبّت.' : 'بنراجع الإيصال وبنأكدلك على الواتساب خلال يوم.';
   $('#n1').textContent = kind === 'card' ? 'بنتواصل معك على الواتساب' : 'بنأكدلك الحجز على الواتساب';
   const opt = st.opt || (function(){ try { return JSON.parse(localStorage.getItem('cw_pending') || '{}').opt; } catch (e) { return null; } })();
-  if (opt === 'rec') { $('#n2').textContent = 'بيوصلك التسجيل وملف الأوامر بعد ما يخلص الفوج اللايف'; $('#n3').textContent = 'وإذا عندك أي سؤال، أنا موجود على الواتساب'; }
+  if (opt === 'rec') { $('#n2').textContent = 'بنبعتلك رابط الكورس المسجّل وملف الأوامر على الواتساب'; $('#n3').textContent = 'وإذا عندك أي سؤال، أنا موجود على الواتساب'; }
   $('#ref').textContent = 'رقم الحجز: ' + (ref || st.ref);
   $('#waBtn').href = waLink('أهلين علاء، حجزت بورشة كلود. رقم الحجز: ' + (ref || st.ref));
   go(5); confetti();
