@@ -1,0 +1,55 @@
+<div dir="rtl" style="background:#efe6df;margin:0;padding:0">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0">لايف أو مسجّل، ومقاعد اللايف 5 بس. الحجز من صفحة وحدة.</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#efe6df" dir="rtl"><tr><td align="center" style="padding:24px 12px">
+<table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:600px;background:#fbf6f1;border-radius:18px;overflow:hidden" dir="rtl">
+<tr><td style="background:#1d130e;line-height:0"><a href="{{L}}"><img src="https://alaahamza465-eng.github.io/claude-workshop/assets/banner.jpg" width="600" alt="ورشة احتراف كلود من أنثروبيك — 3 جلسات، 5 مقاعد بس" style="display:block;width:100%;max-width:600px;height:auto;border:0"></a></td></tr>
+<tr><td style="padding:30px 32px 6px 32px" align="right">
+<div style="font:bold 22px/1.5 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#2a1d16">أهلين {{N}} 👋</div>
+<div style="font:16px/1.9 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#2a1d16;margin-top:10px">هاي تفاصيل ورشة «احتراف كلود من أنثروبيك» اللي سجّلتي فيها.<br>في خيارين: <b>لايف</b> أو <b>مسجّل</b>، ومقاعد اللايف 5 بس.</div>
+</td></tr>
+<tr><td align="center" style="padding:20px 32px 6px 32px"><table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"><tr><td align="center" style="background:#e0703a;border-radius:12px">
+<a href="{{L}}" style="display:inline-block;padding:16px 44px;font:bold 18px 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#ffffff;text-decoration:none">احجزي مقعدك</a></td></tr></table>
+<div style="font:13px/1.7 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#6f5a4e;margin-top:8px">بتختاري وبتدفعي من نفس الصفحة، بأقل من دقيقتين</div></td></tr>
+<tr><td style="padding:22px 32px 4px 32px" align="right">
+<div style="font:bold 18px 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#2a1d16;margin-bottom:6px">ايش بتطلعي فيه؟</div>
+<div style="font:15px/1.8 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#6f5a4e;margin-bottom:6px">بتطلعي وكلود شغّال على شغلك إنتي، مش بس بتعرفي عنه:</div>
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" dir="rtl"><tr><td width="26" valign="top" style="padding:6px 0;font:bold 16px 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#e0703a">✓</td><td style="padding:6px 0;font:16px/1.7 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#2a1d16">مساعد على كلود بيعرف شغلك</td></tr><tr><td width="26" valign="top" style="padding:6px 0;font:bold 16px 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#e0703a">✓</td><td style="padding:6px 0;font:16px/1.7 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#2a1d16">أوامر جاهزة للمهام اللي بتكررها كل يوم</td></tr><tr><td width="26" valign="top" style="padding:6px 0;font:bold 16px 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#e0703a">✓</td><td style="padding:6px 0;font:16px/1.7 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#2a1d16">بتعرفي أي خطة اشتراك بتناسبك، وما بتدفعي على إشي ما بتحتاجيه</td></tr></table>
+</td></tr>
+<tr><td style="padding:22px 32px 4px 32px" align="right">
+<div style="font:bold 18px 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#2a1d16;margin-bottom:4px">الجلسات</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" dir="rtl">
+<tr><td width="44" valign="top" style="padding:12px 0"><div style="width:34px;height:34px;line-height:34px;text-align:center;border-radius:17px;background:#1d130e;color:#f0a36e;font:bold 15px 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif">1</div></td>
+<td style="padding:12px 0;border-bottom:1px solid #efe2d8"><div style="font:bold 16px/1.5 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#2a1d16">كلود من الصفر</div><div style="font:15px/1.7 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#6f5a4e">يعني ايش الذكاء الاصطناعي ببساطة، الواجهة، الخطط، وأول شغل حقيقي عليه</div></td></tr>
+<tr><td width="44" valign="top" style="padding:12px 0"><div style="width:34px;height:34px;line-height:34px;text-align:center;border-radius:17px;background:#1d130e;color:#f0a36e;font:bold 15px 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif">2</div></td>
+<td style="padding:12px 0;border-bottom:1px solid #efe2d8"><div style="font:bold 16px/1.5 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#2a1d16">أقوى أدوات كلود</div><div style="font:15px/1.7 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#6f5a4e">المشاريع والملفات والمهارات، وكيف تخليه يشتغل بطريقتك</div></td></tr>
+<tr><td width="44" valign="top" style="padding:12px 0"><div style="width:34px;height:34px;line-height:34px;text-align:center;border-radius:17px;background:#1d130e;color:#f0a36e;font:bold 15px 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif">3</div></td>
+<td style="padding:12px 0;border-bottom:1px solid #efe2d8"><div style="font:bold 16px/1.5 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#2a1d16">كيف أنا بشتغل مع كلود كل يوم</div><div style="font:15px/1.7 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#6f5a4e">وبتطبّقي على شغلك إنتي</div></td></tr>
+<tr><td width="44" valign="top" style="padding:12px 0"><div style="width:34px;height:34px;line-height:34px;text-align:center;border-radius:17px;background:#1d130e;color:#f0a36e;font:bold 15px 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif">+</div></td>
+<td style="padding:12px 0;border-bottom:1px solid #efe2d8"><div style="font:bold 16px/1.5 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#2a1d16">جلسة مع ضيف مختص&nbsp;<span style="font:bold 12px 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#fff;background:#e0703a;padding:2px 8px;border-radius:10px">للايف</span></div><div style="font:15px/1.7 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#6f5a4e">كيف تصلّح أي موقع بنيته على كلود ووقع معك</div></td></tr>
+</table></td></tr>
+<tr><td style="padding:26px 27px 0 27px" align="right">
+<div style="font:bold 18px 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#2a1d16;margin:0 5px 12px 5px">الخيارين</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" dir="rtl"><tr>
+<td valign="top" width="50%" style="padding:0 5px"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" dir="rtl" style="background:#1d130e;border-radius:16px"><tr><td style="padding:18px 18px" align="right">
+<div style="height:22px"><span style="font:bold 11px 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#1d130e;background:#f0a36e;padding:3px 8px;border-radius:9px">5 مقاعد بس</span></div>
+<div style="font:bold 19px 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#fff6ef;margin-top:6px">لايف</div>
+<div style="font:bold 30px 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#f0a36e;margin:4px 0 8px 0">225 <span style="font-size:15px;color:#f6e9df">دولار</span></div>
+<div style="font:14px/1.8 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#f6e9df">• 3 جلسات لايف بمجموعة 5</div><div style="font:14px/1.8 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#f6e9df">• جلسة الضيف</div><div style="font:14px/1.8 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#f6e9df">• التسجيلات وملف الأوامر</div><div style="font:14px/1.8 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#f6e9df">• متابعة أسبوعين واتساب</div></td></tr></table></td>
+<td valign="top" width="50%" style="padding:0 5px"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" dir="rtl" style="background:#ffffff;border:1px solid #efe2d8;border-radius:16px"><tr><td style="padding:18px 18px" align="right">
+<div style="height:22px">&nbsp;</div>
+<div style="font:bold 19px 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#2a1d16;margin-top:6px">مسجّل</div>
+<div style="font:bold 30px 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#2a1d16;margin:4px 0 8px 0">97 <span style="font-size:15px;color:#6f5a4e">دولار</span></div>
+<div style="font:14px/1.8 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#6f5a4e">• تسجيل الجلسات التلاتة</div><div style="font:14px/1.8 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#6f5a4e">• ملف الأوامر الجاهزة</div><div style="font:14px/1.8 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#6f5a4e">• بيوصلك بعد الفوج</div></td></tr></table></td>
+</tr></table></td></tr>
+<tr><td style="padding:16px 32px 0 32px" align="right">
+<div style="font:15px/1.8 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#6f5a4e">الدفع بالبطاقة، أو من فلسطين وغزة عن طريق إي براق بالشيكل. كله من نفس الصفحة.</div>
+<div style="font:15px/1.8 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#6f5a4e">موعد أول جلسة ورابطها بيوصلوكي على الواتساب بعد الحجز.</div>
+</td></tr>
+<tr><td align="center" style="padding:24px 32px 8px 32px"><table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"><tr><td align="center" style="background:#e0703a;border-radius:12px">
+<a href="{{L}}" style="display:inline-block;padding:16px 44px;font:bold 18px 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#ffffff;text-decoration:none">احجزي مقعدك</a></td></tr></table></td></tr>
+<tr><td style="padding:22px 32px 28px 32px" align="right">
+<div style="font:16px/1.8 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#2a1d16">بشوفك بالورشة،<br><b>علاء الخضري</b></div>
+<div style="font:14px 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#6f5a4e;margin-top:4px"><a href="https://instagram.com/alaaalkhodaryofficial" style="color:#e0703a;text-decoration:none"><span dir="ltr">@alaaalkhodaryofficial</span></a></div>
+</td></tr>
+<tr><td style="background:#f3e9e1;padding:14px 32px" align="right"><div style="font:12px/1.7 'thmanyah sans', Tahoma, 'Segoe UI', Arial, sans-serif;color:#9a8577">وصلك هالإيميل لأنك سجّلتي بالورشة من انستقرام.</div></td></tr>
+</table></td></tr></table></div>
